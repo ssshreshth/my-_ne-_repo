@@ -1,0 +1,75 @@
+<nav class="bg-gradient-to-r from-slate-800 to-slate-900 p-4 shadow-md  z-50">
+    <div class="grid grid-cols-3 items-center max-w-7xl mx-auto">
+      <!-- Logo Section -->
+      <div class="flex justify-center items-center space-x-2">
+        <img src="path-to-your-logo.png" alt="Logo" class="h-10 w-10 rounded-full border-2 border-teal-500" />
+        <a href="#" class="text-teal-400 font-bold text-xl">Logo</a>
+      </div>
+  
+      <!-- Search and Navigation -->
+      <div class="flex justify-content-center">
+        <!-- Search and Dialog Combination -->
+    <p-button (click)="showDialog()" pRipple severity="warn" styleClass="rounded-lg  px-4" >
+    <WindowMaximizeIcon class="mr-2" />
+    <span>Search</span>
+    </p-button>
+
+    <!-- Dialog Component -->
+    <p-dialog maskStyleClass="backdrop-blur-sm" [(visible)]="visible" styleClass="!border-0 !bg-transparent">
+    <ng-template #headless>
+        <div class="flex flex-col px-8 py-8 gap-6 rounded-2xl"
+        style="border-radius: 12px; background-image: radial-gradient(circle at left top, var(--p-primary-400), var(--p-primary-700))">
+        
+        <!-- SVG Logo -->
+        <svg width="31" height="33" viewBox="0 0 31 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="block mx-auto">
+            <path d="..." fill="var(--p-primary-color)" />
+        </svg>
+
+        <!-- Username Input -->
+        <div class="inline-flex flex-col gap-2">
+            <label for="username" class="text-primary-50 font-semibold">Username</label>
+            <input pInputText id="username" class="!bg-white/20 !border-0 !p-4 !text-primary-50 w-80" />
+        </div>
+
+        <!-- Password Input -->
+        <div class="inline-flex flex-col gap-2">
+            <label for="password" class="text-primary-50 font-semibold">Password</label>
+            <input pInputText id="password" type="password" class="!bg-white/20 !border-0 !p-4 !text-primary-50 w-80" />
+        </div>
+
+        <!-- Dialog Buttons -->
+        <div class="flex items-center gap-4">
+            <p-button label="Cancel" (click)="closeDialog()" text="true"
+            styleClass="!p-4 w-full !text-primary-50 !border !border-white/30 hover:!bg-white/10" />
+            <p-button label="Sign-In" (click)="closeDialog()" text="true"
+            styleClass="!p-4 w-full !text-primary-50 !border !border-white/30 hover:!bg-white/10" />
+        </div>
+        </div>
+    </ng-template>
+    </p-dialog>
+
+        <!-- Rectangular Box -->
+        <div class="bg-white shadow-lg rounded-lg px-4 py-2 text-gray-700 text-sm border border-gray-300 ">
+        Content inside a beautiful rectangular box.
+        </div>
+      </div>
+      <!-- <div class="flex justify-center">
+        <button pButton class="p-button p-button-primary">Search</button>
+      </div> -->
+  
+      <!-- Right-side Options -->
+      <div class="flex items-center justify-end space-x-4">
+        <span class="text-white">Content 1</span>
+        <span class="text-white">Content 2</span>
+        <span class="text-white">Content 3</span>
+        <span class="text-white">Content 4</span>
+  
+        <!-- Profile Dropdown -->
+        <p-menu #menu [model]="profileMenuItems" popup></p-menu>
+        <button pButton class="p-button-rounded p-button border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black transition duration-300" icon="pi pi-user" (click)="menu.toggle($event)"></button>
+      </div>
+    </div>
+  </nav>
+  
+  
+  

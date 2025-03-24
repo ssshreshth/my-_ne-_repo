@@ -1,0 +1,25 @@
+/* ✅ Change Here: Sidebar Container Design */
+.sidebar-container {
+    width: 280px;
+    height: calc(100vh - 64px); /* Navbar height removed */
+    
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
+    overflow-y: auto;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+  }
+  
+  /* ✅ Change Here: Sidebar Hover Effect */
+  .sidebar-container:hover {
+    background-color: rgba(30, 41, 59, 0.8); /* Darker slate on hover */
+  }
+  
+  /* ✅ Change Here: Scrollbar Design */
+  .sidebar-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .sidebar-container::-webkit-scrollbar-thumb {
+    background: #14B8A6; /* Teal Scrollbar */
+    border-radius: 10px;
+  }
+  
